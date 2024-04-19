@@ -60,19 +60,25 @@
 /* Titulos Principales */
 @media (max-width: 768px){
     .titulosPrincipales{
-        .titulosPrincipales1{
-            padding: 1.6px;
-            font-size: 1.5rem;
-            line-height: 53px;
-                .titulosPrincipales2{
-                    font-size: 0.5rem;
-                
-                    
+        background-image: linear-gradient(to top, #0000008a,#000000a8),url(images/Fondo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+        color: white;
+        padding: 25vh 0px;
+        margin-inline: auto;
+            .titulosPrincipales1{
+                padding: 1.6px;
+                font-size: 1.5rem;
+                line-height: 53px;
+                    .titulosPrincipales2{
+                        font-size: 0.5rem;
+                        }
+                    }    
 
-                    }
-                }    
-
-        }
+            }
 
     
 
