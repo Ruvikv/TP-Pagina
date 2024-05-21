@@ -3,89 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro|Catalogo Peliculas</title>
+    <title>Registro | Catalogo Peliculas</title>
     <link rel="icon" href="images/netflix-mobile-application-logo-free.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body class="cuerpo">
-    
     <header>
         <nav>
             <a class="logo" href="index.html"><img src="images/netflix-mobile-application-logo-free.png" alt="100" width="100" height="100"></a>
         </nav>
-    
+    </header>
+
     <main>
-        
         <section class="formulario">
             <h1 class="encabezado">Registro</h1>
-            <div>
-                <br>
-            </div>
+            <div><br></div>
             <form action="datos.php" method="post">
-                    
-            <div>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-            </div>
-            <div>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
-            </div>
-                        
-            <div>
-                <input type="email" name="correo" id="correo" placeholder="Email" required>
-            </div>
-                        
-            <div>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
-            </div>
-                        
-            <div>
-
-                <input type="date" name="fecha" id="fecha" required>
-            </div>
-                        
-            <div>
-                <select class="pais" id="prov" name="prov">
-                    <option value>País</option>
-                    <option value="Caba">Capital Federal</option>
-                    <option value="Buenos Aires">Bs. As.</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Chubut">Chubut</option>
-                    <option value="Cordoba">Cordoba</option>
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Entre Rios">Entre Rios</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Jujuy">Jujuy</option>
-                    <option value="La Pampa">La Pampa</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option value="Mendoza">Mendoza</option>
-                    <option value="Misiones">Misiones</option>
-                    <option value="Neuquen">Neuquen</option>
-                    <option value="Rio Negro">Rio Negro</option>
-                    <option value="Salta">Salta</option>
-                    <option value="San Juan">San Juan</option>
-                    <option value="San Luis">San Luis</option>
-                    <option value="Santa Cruz">Santa Cruz</option>
-                    <option value="Santa Fe">Santa Fe</option>
-                    <option value="Sgo. del Estero">Sgo. del Estero</option>
-                    <option value="Tierra del Fuego">Tierra del Fuego</option>
-                    <option value="Tucuman">Tucuman</option>
-                </select>
-                    </div>
-                        
-                    <div>
-                        <label class="ayuda2" for="condiciones">Acepta terminos y condiciones
-                        <input class="checkbox" type="checkbox" id="condiciones" name="checkeo" required>
-                        </label>
+                <div class="input-container">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                 </div>
-                        
-                <div>
+                <div class="input-container">
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="input-container">
+                    <input type="email" name="correo" id="correo" placeholder="Email" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+                </div>
+                <div class="input-container">
+                    <input type="date" name="fecha" id="fecha" required>
+                </div>
+                <div class="input-container">
+                    <select class="pais" id="prov" name="prov">
+                        <option value>País</option>
+                        <option value="Caba">Capital Federal</option>
+                        <option value="Buenos Aires">Bs. As.</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Rios">Entre Rios</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquen">Neuquen</option>
+                        <option value="Rio Negro">Rio Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Sgo. del Estero">Sgo. del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucuman">Tucuman</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label class="ayuda2" for="condiciones">Acepta términos y condiciones
+                        <input class="checkbox" type="checkbox" id="condiciones" name="checkeo" required>
+                    </label>
+                </div>
+                <div class="input-container">
                     <input class="boton" type="submit" value="Registrarse">
                 </div>
             </form>
         </section>              
     </main>
-    </header>
-
 </body>
 </html>

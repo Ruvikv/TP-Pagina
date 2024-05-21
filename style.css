@@ -572,3 +572,53 @@ hr{margin-left: 65px;
     background-color: #ff0000; /* Cambia el color al pasar el mouse */
     transform: scale(1.05);
 }
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.titulosPrincipales1 h1, .titulosPrincipales2 h4 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.galeria .item {
+    animation: slideIn 1s ease-in-out;
+}
+
+.botonIndex, .botonIS {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botonIndex:hover, .botonIS:hover {
+    background-color: #ff0000; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.formulario {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.input-container {
+    animation: slideIn 1s ease-in-out;
+}
+
+.boton {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
