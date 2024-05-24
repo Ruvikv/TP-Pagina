@@ -25,10 +25,10 @@
                     <br>
                 </div>
                 <div class="input-container">
-                    <input type="email" name="correo" id="correo" placeholder="Email" required>
+                    <input type="email" name="correo" id="correo" placeholder="Email">
                 </div>
                 <div class="input-container">
-                    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+                    <input type="password" name="password" id="contraseña" placeholder="Contraseña">
                 </div>
                 <div>
                     <br>
@@ -45,5 +45,44 @@
             </form>
         </section>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                
+                var correo = document.getElementById("correo");
+                var password = document.getElement("password");
+                var esValido = true;
+
+                if (correo === ""){
+                    displayErrorMessage("correoError", "Por favor ingrese un usuario.");
+                    esValido = false;
+                }
+
+                if (password === ""){
+                    displayErrorMessage("passwordError", "Por favor ingrese una contraseña.");
+                    esValido = false;
+                }
+
+                if (password.length < 8){
+                    displayErrorMessage("passwordError", "La contraseña debe tener al menos 8 caracteres.");
+                    esValido = false;
+                }
+
+                if (esValido){
+                    alert("Formulario Enviado Correctamente")
+                }
+
+                function displayError(elementId, message){
+                    var errorElement = document.getElementById(elementId)
+                    errorElement.innerText = message;
+                }
+            });
+        });
+
+
+    </script>
 </body>
 </html>
