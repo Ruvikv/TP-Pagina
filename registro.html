@@ -19,55 +19,51 @@
         <section class="formulario">
             <h1 class="encabezado">Registro</h1>
             <div><br></div>
-            <form action="datos.php" method="post">
+            <form id="registro-formulario" action="datos.php" method="post">
                 <div class="input-container">
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <span id="nombreError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <input type="text" name="apellido" id="apellido" placeholder="Apellido" >
+                    <span id="apellidoError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <input type="email" name="correo" id="correo" placeholder="Email">
+                    <span id="correoError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+                    <span id="passwordError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <input type="date" name="fecha" id="fecha">
+                    <span id="fechaError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <select class="pais" id="prov" name="prov">
-                        <option value>País</option>
-                        <option value="Caba">Capital Federal</option>
-                        <option value="Buenos Aires">Bs. As.</option>
-                        <option value="Catamarca">Catamarca</option>
-                        <option value="Chaco">Chaco</option>
-                        <option value="Chubut">Chubut</option>
-                        <option value="Cordoba">Cordoba</option>
-                        <option value="Corrientes">Corrientes</option>
-                        <option value="Entre Rios">Entre Rios</option>
-                        <option value="Formosa">Formosa</option>
-                        <option value="Jujuy">Jujuy</option>
-                        <option value="La Pampa">La Pampa</option>
-                        <option value="La Rioja">La Rioja</option>
-                        <option value="Mendoza">Mendoza</option>
-                        <option value="Misiones">Misiones</option>
-                        <option value="Neuquen">Neuquen</option>
-                        <option value="Rio Negro">Rio Negro</option>
-                        <option value="Salta">Salta</option>
-                        <option value="San Juan">San Juan</option>
-                        <option value="San Luis">San Luis</option>
-                        <option value="Santa Cruz">Santa Cruz</option>
-                        <option value="Santa Fe">Santa Fe</option>
-                        <option value="Sgo. del Estero">Sgo. del Estero</option>
-                        <option value="Tierra del Fuego">Tierra del Fuego</option>
-                        <option value="Tucuman">Tucuman</option>
-                    </select>
+                        <option value="">País</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="China">China</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="India">India</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Russia">Russia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                    </select>                    
+                    <span id="paisError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <label class="ayuda2" for="condiciones">Acepta términos y condiciones
                         <input class="checkbox" type="checkbox" id="condiciones" name="checkeo">
                     </label>
+                    <span id="condicionesError" class="error-message"></span>
                 </div>
                 <div class="input-container">
                     <input class="boton" type="submit" value="Registrarse">
@@ -77,82 +73,81 @@
     </main>
 
     <script>
-        document.querySelectorAll(".form-control").forEach((input) => {
-            input.addEventListener("keydown", (event) => {
-                if (event.key === "Tab" || event.key === "Enter") {
-                    event.preventDefault();
-                    validarCampos();
-                }
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("registro-formulario").addEventListener("submit", function(event){
+                event.preventDefault();
+                validarCampos();
             });
         });
-
-        document.addEventListener("DOMContentLoaded", function(){
-            document.getElementById("formulario").addEventListener("submit",function(event){{
-                event.preventDefault();
-
-                const validarCampos=() => {
-                    resetMensajeError();
-                    const nombre = document.getElementById("nombre").value.trim();
-                    const apellido = document.getElementById("apellido").value.trim();
-                    const correo = document.getElementById("correo").value.trim();
-                    const contraseña = document.getElementById("contraseña").value.trim();
-                    const fecha = document.getElementById("fecha").value.trim();
-                    let esValido = true;
-                    
-
-                    if (nombre === "") {
-                    mensajeError("nombreError", "Por Favor Ingrese un nombre")
-                    esValido = false;
-                    }
-
-                    if (apellido === "") {
-                        mensajeError("apellidoError", "Por Favor Ingrese un apellido")
-                        esValido = false;
-                    }
-
-                    if (!mailValido(correo)){
-                        displayError("mensajeError", "Por favor Ingreser un correo valido")
-                    }
-
-                    if (contraseña.length < 8){
-                        displayError("passwordError", "La contraseña debe tener al menos 8 caracteres")
-                        esValido = false;
-                    }
-
-                    if (esValido){
-                        alert('Formulario Enviado Correctamente!');
-                    }
-                    }
-
+    
+        function validarCampos() {
+            resetMensajeError();
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellido = document.getElementById("apellido").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const contraseña = document.getElementById("contraseña").value.trim();
+            const fecha = document.getElementById("fecha").value.trim();
+            const pais = document.getElementById("prov").value;
+            const condiciones = document.getElementById("condiciones").checked;
+            let esValido = true;
+    
+            if (nombre === "") {
+                mensajeError("nombreError", "Por favor, ingrese un nombre.");
+                esValido = false;
             }
-
-        });
-        });
-
-        function resetMensajeError(){
+    
+            if (apellido === "") {
+                mensajeError("apellidoError", "Por favor, ingrese un apellido.");
+                esValido = false;
+            }
+    
+            if (!mailValido(correo)) {
+                mensajeError("correoError", "Por favor, ingrese un correo válido.");
+                esValido = false;
+            }
+    
+            if (contraseña.length < 8) {
+                mensajeError("passwordError", "La contraseña debe tener al menos 8 caracteres.");
+                esValido = false;
+            }
+    
+            if (fecha === "") {
+                mensajeError("fechaError", "Por favor, seleccione una fecha de nacimiento.");
+                esValido = false;
+            }
+    
+            if (pais === "") {
+                mensajeError("paisError", "Por favor, seleccione un país.");
+                esValido = false;
+            }
+    
+            if (!condiciones) {
+                mensajeError("condicionesError", "Debe aceptar los términos y condiciones.");
+                esValido = false;
+            }
+    
+            if (esValido) {
+                alert('¡Formulario enviado correctamente!');
+            }
+        }
+    
+        function resetMensajeError() {
             var errorElements = document.querySelectorAll(".error-message");
-            errorElements.foreach(function(element) {
+            errorElements.forEach(function(element) {
                 element.innerText = "";
             });
         }
-
-        function mensajeError(elementId,message) {
+    
+        function mensajeError(elementId, message) {
             var errorElement = document.getElementById(elementId);
             errorElement.innerText = message;
         }
-
-        function displayError(elementId,message) {
-            var errorElement = document.getElementById(elementId);
-            errorElement.innerText = message;
-        }
-
-        function mailValido(correo){
+    
+        function mailValido(correo) {
             var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailValido.test(correo);
         }
-
-
-
     </script>
+    
 </body>
 </html>

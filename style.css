@@ -672,3 +672,11 @@ hr{margin-left: 65px;
     background-color: #ff0000;
     transform: scale(1.05);
 }
+
+
+.error-message {
+    display: block;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
