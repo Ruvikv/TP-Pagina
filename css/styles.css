@@ -1,0 +1,67 @@
+:root {
+    --primary-color: #FCE1C1;
+    --secondary-color: #EBEBEB;
+}
+
+body {
+    background-color: var(--primary-color);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.2) 2px, transparent 2px);
+    background-size: 38px 38px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.navbar {
+    min-height: 15vh;
+}
+
+.hero, .login-container, .register-container, .api-container {
+    min-height: 85vh;
+}
+
+.de-accion {
+    min-height: 400px;
+}
+
+.de-accion ::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.de-accion ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+.de-accion, .catalogo {
+    color: white;
+}
+
+.juego-catalogo {
+    transition: all 0.5s ease-out;
+}
+
+.juego-catalogo:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px inset, rgba(255, 255, 255, 0.9) 0px 0px 0px 2px;
+}
+
+.login-form, .register-form, .detail-container, .api-body, .admin-form {
+    background-color: var(--secondary-color);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 2px;
+}
+
+.descripcion-listado {
+    min-width: 150px;
+}
+
+.error-message {
+    display: block;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

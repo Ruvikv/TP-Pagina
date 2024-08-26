@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <!-- Link del favicon -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logo.png" height="35px" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav w-100 justify-content-end align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="../pages/login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="../pages/register.html">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="../pages/api.html">API</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="../pages/administrador.html">Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container d-flex justify-content-center py-3 px-5 api-container">
+                <div class="row align-items-center">
+                    <div class="col p-3 rounded api-body">
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active" id="v-pills-oficial-tab" data-bs-toggle="pill" data-bs-target="#v-pills-oficial" type="button" role="tab" aria-controls="v-pills-oficial" aria-selected="true">Oficial</button>
+                                <button class="nav-link" id="v-pills-blue-tab" data-bs-toggle="pill" data-bs-target="#v-pills-blue" type="button" role="tab" aria-controls="v-pills-blue" aria-selected="false">Blue</button>
+                                <button class="nav-link" id="v-pills-bolsa-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bolsa" type="button" role="tab" aria-controls="v-pills-bolsa" aria-selected="false">Bolsa</button>
+                                <button class="nav-link" id="v-pills-contadoconliqui-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contadoconliqui" type="button" role="tab" aria-controls="v-pills-contadoconliqui" aria-selected="false">CCL</button>
+                                <button class="nav-link" id="v-pills-mayorista-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mayorista" type="button" role="tab" aria-controls="v-pills-mayorista" aria-selected="false">Mayorista</button>
+                                <button class="nav-link" id="v-pills-cripto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cripto" type="button" role="tab" aria-controls="v-pills-cripto" aria-selected="false">Cripto</button>
+                                <button class="nav-link" id="v-pills-tarjeta-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tarjeta" type="button" role="tab" aria-controls="v-pills-tarjeta" aria-selected="false">Tarjeta</button>
+                            </div>
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-oficial" role="tabpanel" aria-labelledby="v-pills-oficial-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-blue" role="tabpanel" aria-labelledby="v-pills-blue-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-bolsa" role="tabpanel" aria-labelledby="v-pills-bolsa-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-contadoconliqui" role="tabpanel" aria-labelledby="v-pills-contadoconliqui-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-mayorista" role="tabpanel" aria-labelledby="v-pills-mayorista-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-cripto" role="tabpanel" aria-labelledby="v-pills-cripto-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="v-pills-tarjeta" role="tabpanel" aria-labelledby="v-pills-tarjeta-tab" tabindex="0">...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Conexión a la API JavaScript -->
+    <script src="../js/api.js"></script>
+</body>
+</html>
